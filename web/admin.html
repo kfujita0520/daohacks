@@ -2,7 +2,7 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="./style.css">
-  <title>DAO Task Management</title>
+  <title>Admin</title>
 </head>
 <body>
 <style>
@@ -22,7 +22,7 @@
 </div>
 
 
-  <h1>Task Board for DAO Member</h1>
+  <h1>Grant reward to DAO Member</h1>
 
 <div id="metamask-announce" class="disc" style="display: none">
   <div >It seems you don't connect to Metamask. Please do so. </div>
@@ -35,35 +35,20 @@
 
 <div class="box-interface">
   <div class="row1">
-    <h3>Work for Task</h3>
+    <h3>Grant Reward</h3>
   </div>
   <div class="row2">
-    <button id="stake-task-button" disabled>Stake for Task</button>
+      User
+      <input id="grant-address" type="text" placeholder="address" />
+      <br/>
+      Amount
+      <input id="reward-amount" type="text" placeholder="amount" />
+
   </div>
   <div class="row3">
-    <button id="task-complete-button" disabled>Report Task Completion</button>
+    <button id="grant-reward-button">Grant Reward</button>
   </div>
 </div>
-
-  <div class="box-interface">
-    <div class="row1">
-      <h3>Claim Reward</h3>
-    </div>
-    <div class="row2">
-      <label>
-        Claimable Reward Amount <br/>
-        <span id="reward_amount">0</span> Token
-
-      </label>
-    </div>
-    <div class="row3">
-      <button id="claim-reward-button" disabled>Claim</button>
-      <input id="claim-reward" type="text" placeholder="Token" />
-    </div>
-  </div>
-
-
-<button class="enable-button" id="buy-token-button" >Buy Token</button>
 
 
 
@@ -77,6 +62,6 @@
 <script type="text/javascript" src="./js/etherjs.min.js"></script>
 <script type="text/javascript" src="./js/erc20Abi.js"></script>
 <script type="text/javascript" src="./js/daoTaskAbi.js"></script>
-<script type="text/javascript" src="./js/daotask.js"></script>
+<script type="text/javascript" src="./js/admin.js"></script>
 
 </html>

@@ -7,7 +7,7 @@ body {
   background-color: #1a1a1a;
 }
 
-h1, .enable-button, .asset-interface {
+h1, .enable-button, .box-interface {
   margin: 40px auto;
 }
 
@@ -25,6 +25,12 @@ button {
   cursor: pointer;
 }
 
+button:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  background: #cccccc;
+}
+
 label {
   font-weight: bold;
   font-size: 14px;
@@ -40,18 +46,24 @@ label {
   background-color: #0494fb;
 }
 
-.asset-interface button {
-  width: 78px;
+.box-interface button {
+  min-width: 78px;
   margin: 0px 2px;
   padding: 8px;
   background-color: #00D395;
 }
 
-.asset-interface button:hover {
+.box-interface button:hover {
   background-color: #00ffb3;
 }
 
-.asset-interface [type=text] {
+.box-interface button:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  background: #cccccc;
+}
+
+.box-interface [type=text] {
   width: 53px;
   padding: 6px;
   text-align: center;
@@ -61,13 +73,17 @@ label {
   border: none;
 }
 
-.asset-interface {
+.box-interface label {
+  font-size: 16px;
+}
+
+.box-interface {
   width: 325px;
   height: 210px;
   display: grid;
   align-items: center;
   grid-template-columns: 20px auto 20px;
-  grid-template-rows: 20px 40px 30px 50px 50px 20px;
+  grid-template-rows: auto;
   text-align: center;
   color: #FFFFFF;
   background-color: #070A0E;
@@ -75,22 +91,19 @@ label {
   border-radius: 8px;
 }
 
-.asset-interface .row1 {
+.box-interface .row1 {
   grid-column: 2 / span 1;
-  grid-row: 2 / span 1;
 }
 
-.asset-interface .row2 {
+.box-interface .row2 {
   grid-column: 2 / span 1;
-  grid-row: 3 / span 1;
 }
 
-.asset-interface .row3 {
+.box-interface .row3 {
   grid-column: 2 / span 1;
-  grid-row: 4 / span 1;
 }
 
-.asset-interface .row4 {
+.box-interface .row4 {
   grid-column: 2 / span 1;
   grid-row: 5 / span 1;
 }
@@ -135,4 +148,14 @@ label {
   padding: 3px;
   margin: 3px;
   background-color: #037dd6;
+}
+
+.right-menu button:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  background: #cccccc;
+}
+
+.disc {
+  text-align: center;
 }
