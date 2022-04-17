@@ -31,7 +31,7 @@ async function main() {
     //await satoshiToken.mint(sender.address, 100000000);
     let balance = await satoshiToken.balanceOf(sender.address);
     console.log("balance of owner:", balance);
-    await satoshiToken.transfer(satoshiDAOTask.address, 20000);
+    await satoshiToken.transfer(satoshiDAOTask.address, 2000000000);
     console.log("balance of daoTask:", await satoshiToken.balanceOf(satoshiDAOTask.address));
 
     console.log('Staking status at first:', await satoshiDAOTask.getStaking(sender.address));
@@ -72,6 +72,12 @@ async function main() {
     for(let i=0; i<rewardList.length; i++){
         console.log(rewardList[i]);
     }
+
+    console.log("eth balance of sender2:", await hre.ethers.provider.getBalance(sender2.address));
+    console.log("balance of sender2:", await satoshiToken.balanceOf(sender2.address));
+    await satoshiDAOTask.connect(sender2).buyToken({value: hre.ethers.utils.parseEther("0.1")});
+    console.log("eth balance of sender2:", await hre.ethers.provider.getBalance(sender2.address));
+    console.log("balance of sender2:", await satoshiToken.balanceOf(sender2.address));
     console.log('Complete');
 
 

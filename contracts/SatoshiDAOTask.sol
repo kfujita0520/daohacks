@@ -86,4 +86,13 @@ contract SatoshiDAOTask is Ownable{
         IERC20(rewardToken).transfer(msg.sender, amount);
     }
 
+    //dao token decimal is 8 while native token decimal is 18
+    function buyToken() public payable {
+        uint256 amount = msg.value / (10**10);
+        require(amount >= 1000, 'Less than minimum amount');
+        require(IERC20(rewardToken).balanceOf(address(this)) >= amount, 'Not enough balance to withdraw');
+        payable(owner()).transfer(msg.value);
+        IERC20(rewardToken).transfer(msg.sender, amount);
+    }
+
 }

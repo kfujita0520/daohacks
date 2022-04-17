@@ -1,5 +1,5 @@
 const DAOTokenAddress = "0xfb694C14B7BDB2E630948ac770B1c4BeaC8416C9";
-const DAOTaskAddress = "0xb452601270aca917C24678D6CF0ca21304BB383B";
+const DAOTaskAddress = "0x8C89e82d7885Ebe14642756E616BB0A28f6A59c8";
 const grantRewardButton = document.getElementById('grant-reward-button');
 const grantAddressInput = document.getElementById('grant-address');
 const rewardAmountInput = document.getElementById('reward-amount');

@@ -1,10 +1,12 @@
 
 const DAOTokenAddress = "0xfb694C14B7BDB2E630948ac770B1c4BeaC8416C9";
-const DAOTaskAddress = "0xb452601270aca917C24678D6CF0ca21304BB383B";
+const DAOTaskAddress = "0x8C89e82d7885Ebe14642756E616BB0A28f6A59c8";
 const stakeTaskButton = document.getElementById('stake-task-button');
 const TaskCompleteButton = document.getElementById('task-complete-button');
 const claimRewardButton = document.getElementById('claim-reward-button');
 const claimRewardInput = document.getElementById('claim-reward');
+const buyTokenButton = document.getElementById('buy-token-button');
+const buyTokenAmountInput = document.getElementById('buy-token-amount');
 const descBox = document.getElementById('buy-announce');
 const enableEthereumButton = document.getElementById('enable-button');
 let accounts;
@@ -54,6 +56,16 @@ claimRewardButton.onclick = async () => {
 
 };
 
+buyTokenButton.onclick = async () => {
+  console.log('buy token');
+  const signer = await provider.getSigner();
+  // let address = await signer.getAddress();
+  // console.log(address);
+  const DAOTaskContract = new ethers.Contract(DAOTaskAddress, daoTaskAbi, signer);
+  console.log((ethers.utils.parseEther(buyTokenAmountInput.value)));
+  await DAOTaskContract.buyToken({value: ethers.utils.parseEther(buyTokenAmountInput.value)});
+};
+
 
 
 async function getTokenBalance(tokenAddress, accountAddress) {
@@ -66,7 +78,6 @@ async function getTokenBalance(tokenAddress, accountAddress) {
   // let tokenBal = (balance/Math.pow(10, unit)).toFixed(3);
 
 }
-
 
 
 async function setupStatus() {

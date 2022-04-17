@@ -7,7 +7,7 @@ body {
   background-color: #1a1a1a;
 }
 
-h1, .enable-button, .box-interface {
+h1, .enable-button, .box-interface, .box2-interface {
   margin: 40px auto;
 }
 
@@ -38,7 +38,7 @@ label {
 
 .enable-button {
   display: block;
-  padding: 15px 32px;
+  padding: 15px 25px;
   background-color: #037dd6;
 }
 
@@ -75,6 +75,10 @@ label {
 
 .box-interface label {
   font-size: 16px;
+}
+
+.box-interface input {
+  margin: 5px 10px;
 }
 
 .box-interface {
@@ -158,4 +162,23 @@ label {
 
 .disc {
   text-align: center;
+}
+
+.box2-interface {
+  width: 325px;
+  height: 210px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #070A0E;
+  border: solid 1px #4d4d4d;
+  border-radius: 8px;
+  flex-wrap: wrap;
+  column-gap: 1px;
+}
+
+.box2-interface input{
+  margin: 10px;
+  padding: 15px 5px;
 }
