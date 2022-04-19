@@ -14,5 +14,14 @@ Reward grant will be done in admin page, which shoud be accessible only admin me
 Reward process is recorded in dAPP but it is done manually rathen than automated as task page is implemeted in centralized way.
 After reward is granted by admin, member can see his claimable reward amount on our page and claim the reward at their convenient time.
 
+### 3) Token Purchase
+For those who do not have our DAO token which is needed for staking to apply tasks, 
+our system offers the token purchase function where user can buy our token with exchanging native ETH tokens. 
+
+### 4) Login Authentication (T.B.D.)
+Implement login authentication function for Admin page access. (UX can be similar to OpenSea)
+This function is still not implemented. 
+
 ## Architecture
-T.B.D.
+DAOTask smart contract will manage above all functions, and clients(HTML/java script) will interact with this smart contract via Metamask(provider). 
+For Login authentication, separate centralized database is needed to manage user information, which is still not implemented.   
